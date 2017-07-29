@@ -13,7 +13,7 @@ bot = telebot.TeleBot(_token)
 def echo_msg(message):
     print(message.text)
     from_lang = translate.detect(message.text)
-    to_lang = '-pt' if from_lang == 'ru' else '-ru'
+    to_lang = '-ru' if from_lang == 'pt' else '-pt'
     trans_dir = from_lang + to_lang
     print(trans_dir)
     translated_message = translate.translate(message.text, trans_dir)
